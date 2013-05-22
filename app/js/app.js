@@ -9,3 +9,6 @@ angular.module('phonecat', ['phonecatFilters', 'phonecatServices']).
       when('/phones/:phoneId', {templateUrl: 'partials/phone-detail.html', controller: PhoneDetailCtrl}).
       otherwise({redirectTo: '/phones'});
 }]);
+
+
+angular.module("photoApp", []);

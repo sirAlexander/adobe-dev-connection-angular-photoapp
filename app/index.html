@@ -8,11 +8,11 @@
         <link rel="stylesheet" href="css/photo-app.css" type="text/css"/>
     </head>
 
-    <body ng-app>
+    <body ng-app="photoApp">
 
         <div ng-controller="MainController">
 
-            <form class="search-field">
+            <form class="search-field" ng-submit="submitSearch()">
                 <input type="text" ng-model="searchKeyword">
                 <input type="submit" value="Find">
                 <span class="search-message">photos of {{searchKeyword}}</span>
@@ -25,16 +25,18 @@
                         ng-click="setThumbSize('large')">Large</button>
             </div>
 
-            <ul class="results-list small-thumbs">
+            <ul class="results-list" ng-class="thumbSize + '-thumbs'">
                 <li ng-repeat="photo in photos">
                     <img ng-src="{{photo.thumbUrl}}"/>
                     <p class="title">{{photo.title}}</p>
-                </li>          
+                </li>
             </ul>
 
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
         <script src="js/controllers.js"></script>
 
     </body>
